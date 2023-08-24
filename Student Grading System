@@ -1,0 +1,93 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"----------Student Grading System-----------"<<endl;
+    
+    int n;
+    cout<<"Enter Number of Students : ";
+    cin>>n;
+    int eng,hin,math,sci,sst;
+    string grade;
+    string hgrade;
+    string lgrade;
+    
+    
+    for(int i=0 ; i<n; i++){
+        cout<<"Enter name of student-"<<i+1<<" : ";
+        string name;
+        cin>>name;
+        
+        cout<<"Enter marks of English : ";
+        cin>>eng;
+        cout<<"Enter marks of Hindi : ";
+        cin>>hin;
+        cout<<"Enter marks of Maths : ";
+        cin>>math;
+        cout<<"Enter marks of Sciene : ";
+        cin>>sci;
+        cout<<"Enter marks of Sst : ";
+        cin>>sst;
+        
+        int average =(eng+hin+math+sci+sst)/5;
+        int highest = max( max (max( max(eng,hin),math ) ,sci) ,sst);
+        int lowest = min( min (min( min(eng,hin),math ) ,sci) ,sst);
+        
+        if(average>=91 && average <=100)
+           grade ="A1";
+        else if(average>=81 && average<91)
+           grade="A2";
+        else if(average>=71 && average<81)
+           grade="B1";
+        else if(average>=61 && average<71)
+           grade="B2";
+        else if(average>=51 && average<61)
+           grade="C1";   
+        else if(average>=41 && average<51)
+           grade="C2";
+        else
+           grade="D";
+           
+        if(highest>=91 && highest <=100)
+           hgrade ="A1";
+        else if(highest>=81 && highest<91)
+           hgrade="A2";
+        else if(highest>=71 && highest<81)
+           hgrade="B1";
+        else if(highest>=61 && highest<71)
+           hgrade="B2";
+        else if(highest>=51 && highest<61)
+           hgrade="C1";   
+        else if(highest>=41 && highest<51)
+           hgrade="C2";
+        else
+           hgrade="D";
+           
+        if(lowest>=91 && lowest <=100)
+           lgrade ="A1";
+        else if(lowest>=81 && lowest<91)
+           lgrade="A2";
+        else if(lowest>=71 && lowest<81)
+           lgrade="B1";
+        else if(lowest>=61 && lowest<71)
+           lgrade="B2";
+        else if(lowest>=51 && lowest<61)
+           lgrade="C1";   
+        else if(lowest>=41 && lowest<51)
+           lgrade="C2";
+        else
+           lgrade="D";
+        
+        
+        cout<<"\nAverage grade = "<<grade<<endl;
+        cout<<"Highest grade = "<<hgrade<<endl;
+        cout<<"Lowest grade = "<<lgrade<<endl;
+        
+        cout<<endl;
+        
+    }
+
+    return 0;
+}
